@@ -47,9 +47,9 @@ Open the installed Google Chrome browser and go to localhost:8080.
 
 ![Screenshot of CVAT's Log-in Page][CVAT-LogIn-Screenshot]
 
-[WSL2-Guide]: [https://docs.microsoft.com/windows/wsl/install-win10]
-[Docker-Download]: [https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module]
-[Git-Download]: [https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2.21.0-64-bit.exe]
-[Chrome-Download]: [https://www.google.com/chrome/]
-[CVAT-LogIn-Screenshot]:./media/CVAT-LogIn-ScreenShot.png "CVAT LogIn Page Screenshot"
+[WSL2-Guide]: https://docs.microsoft.com/windows/wsl/install-win10
+[Docker-Download]: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module
+[Git-Download]: https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2.21.0-64-bit.exe
+[Chrome-Download]: https://www.google.com/chrome/
+[CVAT-LogIn-Screenshot]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/milestone-1/media/CVAT-LogIn-Screenshot.png "CVAT LogIn Page Screenshot"
 
