@@ -1,0 +1,10 @@
+microwave
+refrigerator
+skillet
+knife
+plate
+spatula
+dishwasher
+toaster
+blender
+coffee Mug
