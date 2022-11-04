@@ -7,4 +7,4 @@ spatula
 dishwasher
 toaster
 blender
-coffee Mug
+coffee mug
