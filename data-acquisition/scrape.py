@@ -5,7 +5,6 @@ a Google Custom Search Engine ID, and Google API Key.
 Downloads images for each product category and saves them to the path.
 '''
 
-# Path: data-acquisition/scraper.py
 import image_scraper as scraper
 import sys
 from googleapiclient.discovery import build
@@ -22,15 +21,18 @@ def main():
     for category in categories:
         query = ROOM + " " + category
         print(f"Querying for {query}")
-        urls = scraper.get_image_urls(resource, query, CX, num_results=100)
+        urls = scraper.get_image_urls(resource, query, CX, num_results=200)
+
+        # just in case the download fails, save the urls to a file
+        # download in separate step
         print(f"Saving {len(urls)} urls for {category}")
         scraper.save_urls(urls, category, path=DATA_PATH)
         
-        # TODO: Download images from urls is not working for some reason
-        # So I am saving the urls to a a file so we can figure it out later
-
-        #print(f"Downloading {len(urls)} images")
-        #scraper.download_images(urls, category, path=DATA_PATH)
+    
+    for category in categories:
+        urls = open(DATA_PATH+category+"/urls/urls.txt").read().splitlines()
+        print(f"Downloading {len(urls)} images")
+        scraper.download_images(urls, category, path=DATA_PATH)
 
     print("Done")
 if(__name__ == "__main__"):
