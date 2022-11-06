@@ -1,5 +1,7 @@
 import requests
 import shutil
+import time
+import timeout_decorator
 import os
 
 def get_image_urls(resource, query, cx, num_results=100):
@@ -30,7 +32,7 @@ def save_urls(urls, category, path="../data"):
     Saves a list of urls to a file
     '''
     # Create directory for category if it doesn't exist
-    if not os.path.exists(path + "/" + category):
+    if not os.path.exists(path + category):
         os.makedirs(path + category)
         os.makedirs(path+category+"/urls")
     path = path + category + "/urls/"
@@ -39,11 +41,25 @@ def save_urls(urls, category, path="../data"):
         for url in urls:
             f.write(url + "\n")
 
+def download_image(url, path, filename):
+    '''
+    Downloads an image from a url
+    '''
+    result = requests.get(url, stream=True)
+
+    # Check if the image was retrieved successfully
+    if result.status_code == 200:
+        # Save image
+        with open(path + filename, 'wb') as f:
+            result.raw.decode_content = True
+            shutil.copyfileobj(result.raw, f)
+    else:
+        print(f"Error downloading {filename}\n{url}")
 
 # TODO: This is not working for some reason
 # URLS are saved to a file, but the images are not downloaded
 # No need to request Google again for the images, just download them from the urls
-def download_images(urls, category, path="../data"):
+def download_images(urls, category, path="../data/"):
     '''
     Downloads images from a list of urls
     Saves to path/category-<filename>
@@ -76,16 +92,7 @@ def download_images(urls, category, path="../data"):
 
         filename = category + "-" + str(i) + "." + image_type
 
-        result = requests.get(url, stream=True)
-
-        # Check if the image was retrieved successfully
-        if result.status_code == 200:
-            # Save image
-            with open(path + filename, 'wb') as f:
-                result.raw.decode_content = True
-                shutil.copyfileobj(result.raw, f)
-        else:
-            print(f"Error downloading {filename}\n{url}")
+        download_image(url, path, filename)
 
         '''
         # Save the image to path/category/filename

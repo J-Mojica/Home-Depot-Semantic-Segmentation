@@ -1,10 +1,4 @@
-spatula
-dishwasher
-toaster
-blender
-coffee mug
-skillet
-knife
-plate
 microwave
 refrigerator
+spatula
+toaster
