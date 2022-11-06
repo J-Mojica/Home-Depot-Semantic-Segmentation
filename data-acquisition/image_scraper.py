@@ -1,7 +1,5 @@
 import requests
 import shutil
-import time
-import timeout_decorator
 import os
 
 def get_image_urls(resource, query, cx, num_results=100):
@@ -56,13 +54,10 @@ def download_image(url, path, filename):
     else:
         print(f"Error downloading {filename}\n{url}")
 
-# TODO: This is not working for some reason
-# URLS are saved to a file, but the images are not downloaded
-# No need to request Google again for the images, just download them from the urls
 def download_images(urls, category, path="../data/"):
     '''
     Downloads images from a list of urls
-    Saves to path/category-<filename>
+    Saves to path/<category>/<category>-<index>.<extension>
     '''
     # Create directory for category if it doesn't exist
     if not os.path.exists(path + "/" + category):
@@ -93,11 +88,3 @@ def download_images(urls, category, path="../data/"):
         filename = category + "-" + str(i) + "." + image_type
 
         download_image(url, path, filename)
-
-        '''
-        # Save the image to path/category/filename
-        try:
-            urllib.request.urlretrieve(url, path + filename)
-        except:
-            print(f"Could not download: {filename}\n{url}")
-        '''

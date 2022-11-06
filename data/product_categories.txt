@@ -1,3 +1,9 @@
+blender
+coffee mug
+dishwasher
+knife
+plate
+skillet
 microwave
 refrigerator
 spatula
