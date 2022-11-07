@@ -3,7 +3,7 @@
 ### Image Scapping using Google Custom Search API
 #### Steps used:
 
-- Create a new project in [Google API cloud console](https://console.cloud.google.com/apis/dashboard))
+- Create a new project in [Google API cloud console](https://console.cloud.google.com/apis/dashboard)
 
 - In this new project, enable the Custom Search API.
 
