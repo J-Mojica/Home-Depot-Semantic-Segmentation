@@ -3,9 +3,17 @@
 ### Image Scapping using Google Custom Search API
 #### Steps used:
 
-- Create a Custom Search Engine (CSE) from the Google API console, https://console.cloud.google.com/apis/
+- Create a new project in [Google API cloud console](https://console.cloud.google.com/apis/dashboard))
+
+- In this new project, enable the Custom Search API.
+
+- Go to the credentials tab on the dashboard and acquire an API key for the Custom Search API
+
+- Go to the [Programmable Search Engine Control Panel](https://programmablesearchengine.google.com/controlpanel/all) and add a new 
+custom search engine, making sure to enable image search. Then get the Search Engine's ID in it's overview page after adding it.
   
-- Create a [web scraper](image_scraper.py) which uses the Google CSE API to obtain the URLs of images and downloads them
+- Create the functions for a [web scraper](image_scraper.py) which uses the Google API Python Client to access a Custom Search Engine resource
+ to obtain the URLs of images and downloads them.
 
 - Created a [driver program](scrape.py) for the [web scraper](image_scraper.py) functions to get the URLs of 200 images
 and download them. We acquired double of what's necessary in case some of the URLs do not work or the images are repeated 
