@@ -15,5 +15,3 @@ to only 100 images per category.
 - Saved the URLs into a file called "urls.txt" for each category and downloaded the images from those urls. Each
 category has its own separate directory and are saved with the name of its respective category followed by a sequential number
 for easy identification.
-
-- Downloaded the images using the URLs from these files.
