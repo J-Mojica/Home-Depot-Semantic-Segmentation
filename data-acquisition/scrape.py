@@ -9,6 +9,9 @@ import image_scraper as scraper
 import sys
 from googleapiclient.discovery import build
 def main():
+    if(len(sys.argv) != 6):
+        print("Usage: python scrape.py [room] [categories file] [data path] [CSE ID] [API Key]")
+        return
     ROOM = sys.argv[1] # e.g. "kitchen"
     CATEGORIES_PATH = sys.argv[2] # Path to categories file
     DATA_PATH = sys.argv[3] # Get data path from command line (where to save images)

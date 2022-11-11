@@ -81,10 +81,10 @@ def download_images(urls, category, path="../data/"):
         # get the image type
         image_type = filename.split(".")[-1]
 
-        # if the image type is not jpg or png, skip it
-        if image_type not in ["jpg", "jpeg", "png"]:
+        # if the image type is not jpg skip it
+        if image_type not in ["jpg", "jpeg"]:
             continue
 
-        filename = category + "-" + str(i) + "." + image_type
+        filename = category + "-" + str(i) + ".jpg"
 
         download_image(url, path, filename)
