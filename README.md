@@ -28,7 +28,7 @@ to only 100 images per category.
 category has its own separate directory and are saved with the name of its respective category followed by a sequential number
 for easy identification.
 
-Below is a screenshot showing the scraped images for a blender, as an example of the outputs that can be found in Home-Depot-Semantic-Segmentation/data/data-raw/blender
+Below is a screenshot showing the scraped images for a blender, as an example of the outputs that can be found in Home-Depot-Semantic-Segmentation/data/data-raw/blender/
 
 ![Blender Images-Screenshot][Blender-Images-Screenshot]
 
