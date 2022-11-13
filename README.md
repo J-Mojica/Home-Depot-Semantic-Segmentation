@@ -16,8 +16,4 @@ Team 1 Members:
 
 Below is a screenshot showing the scraped images for a blender, as an example of the outputs that can be found in Home-Depot-Semantic-Segmentation\data\data-raw
 
-[Blender Images Screenshot]: 
-
-
-
-"Blender Images Screenshot"
+[Blender Images Screenshot]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/data-acquisition/data-acquisition/media/blenderImages.png "Blender Images Screenshot"
