@@ -1,5 +1,7 @@
 ## Milestone 2
-
+Team 1 Members:
+- [Jose Mojica Perez](https://github.com/J-Mojica)
+- [Mehakpreet Kaur](https://github.com/Mehakpreet21)
 ### Image Scapping using Google Custom Search API
 #### Steps used:
 
