@@ -4,7 +4,6 @@ Team 1 Members:
 - [Mehakpreet Kaur](https://github.com/Mehakpreet21)
 
 ## Milestone 3
-
 ## DEXTR and How it works
 
 ### Brief Definition 
