@@ -4,6 +4,10 @@ Team 1 Members:
 - [Mehakpreet Kaur](https://github.com/Mehakpreet21)
 
 ## Milestone 3
+
+## Annotated Data
+Our annotated data can be found [here.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/annotation/data/data-annotated)
+
 ## DEXTR and How it works
 
 ### Brief Definition 
@@ -15,6 +19,8 @@ This model builds on the work of Papadopoulous et al.(2017) in which they use th
 ### Applications
 
 DEXTR can be used to obtain dense annotations to train supervised techniques and we have used this application in this milestone for our data of kitchen objects (Dishwasher, blender, toasters etc). As explained by Maninis et al., “in this framework, instead of detailed polygon labels, the workload of the annotator is reduced to only providing the extreme points of an object” (2018), greatly reducing the amount of time needed to to label a data set. Algorithms that are trained using the annotations that are produced by DEXTR perform just as well as those that are trained using the ground truth ones. Training with DEXTR is much more efficient than training from the ground truth for a given target quality when the cost of obtaining such annotations is taken into account. (Maninis et al., 2018)
+
+
 
 ### Experimental observations
 
@@ -29,5 +35,7 @@ Similarly, many such variations of possibilities have been considered in the use
 D. P. Papadopoulos, J. R. Uijlings, F. Keller, and V. Ferrari. Extreme clicking for efficient object annotation. In ICCV, 2017
 
 Maninis, K.-K. et al. (2018) “Deep Extreme Cut: From extreme points to object segmentation,” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition [Preprint]. Available at: https://doi.org/10.1109/cvpr.2018.00071.
+
+
 
 
