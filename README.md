@@ -2,56 +2,40 @@
 Team 1 Members:
 - [Jose Mojica Perez](https://github.com/J-Mojica)
 - [Mehakpreet Kaur](https://github.com/Mehakpreet21)
-## Milestone 1
 
-### CVAT Installation Instructions Followed
+## Milestone 3
 
-- Install WSL2 (Windows subsystem for Linux) refer to [this official guide][WSL2-Guide] 
-WSL2 requires Windows 10, version 2004 or higher. Note: You may not have to install a Linux distribution unless needed.
+### Annotated Data
+Our annotated data can be found [here.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/annotation/data/data-annotated)
 
-- Download and install [Docker Desktop for Windows][Docker-Download] Double-click `Docker for Windows Installer` 
-to run the installer. Note: Check that you are specifically using WSL2 backend for Docker.
+### DEXTR and How it works
 
-- Download and install [Git for Windows][Git-Download]. When installing the package please keep all options 
-by default. More information about the package can be found here.
+#### Brief Definition 
+[Deep Extreme Cut (DEXTR)](https://cvlsegmentation.github.io/dextr/) is a computer vision deep learning model for semi-automatic object segmentation. The model is able to obtain an object segmentation from at least four of its boundary (“extreme”) points: left-most, right-most, top and bottom pixels (Maninis et al., 2018).
 
-- Download and install [Google Chrome][Chrome-Download]. It is the only browser which is supported by CVAT.
+#### How it works
+This model builds on the work of Papadopoulous et al.(2017) in which they use this same approach for generating bounding boxes around an object. In a nutshell, these four points are used to generate a heatmap around the object which is concatenated with the RGB channels of the input image, creating a four-dimensional input for a Convolutional Neural Network (CNN). These points are also used to generate a bounding box around the object of interest, then this bounding box is relaxed by several pixels to include some context around the object. And finally the image is cropped to just include this region of interest, which includes the object, some context plus its extreme points, as the input for the CNN.  The output of this CNN is “a probability map representing whether a pixel belongs to the object that we want to segment or not. The CNN is trained to minimize the standard cross entropy loss, which takes into account that different classes occur with different frequency in a dataset” (Maninis et al., 2018). In this way, the model is able to obtain fairly accurate object segmentation which can be further refined by providing more extreme points.
 
-- Go to windows menu, find Git Bash application and run it. You should see a terminal window.
+#### Applications
 
-- Clone CVAT source code from the GitHub repository.
+DEXTR can be used to obtain dense annotations to train supervised techniques and we have used this application in this milestone for our data of kitchen objects (Dishwasher, blender, toasters etc). As explained by Maninis et al., “in this framework, instead of detailed polygon labels, the workload of the annotator is reduced to only providing the extreme points of an object” (2018), greatly reducing the amount of time needed to to label a data set. Algorithms that are trained using the annotations that are produced by DEXTR perform just as well as those that are trained using the ground truth ones. Training with DEXTR is much more efficient than training from the ground truth for a given target quality when the cost of obtaining such annotations is taken into account. (Maninis et al., 2018)
 
-The following command will clone the latest develop branch:
 
-```
-git clone https://github.com/opencv/cvat
-cd cvat
-```
 
-Run docker containers. It will take some time to download the latest CVAT release and other 
-required images like postgres, redis, etc. from DockerHub and create containers.
+#### Experimental observations
 
-```
-docker-compose up -d
-```
+Following are some of the experimental observations obtained by Maninis et al. available in their 2018 publication:
 
-You can register a user but by default it will not have rights even to view list of tasks. 
-Thus you should create a superuser. A superuser can use an admin panel to assign correct 
-groups to other users. Please use the command below:
+Different experiments done based on processing full or cropped images also showed that focusing on the objects of interest instead of processing the whole image increased the performance by 7.9% since there are less additional variations in the input in that case. 
 
-```
-winpty docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
-```
+Another such experiment on DEXTR focused on the variations in the output between extreme points supplied by humans and those that [Deep Extreme Cut: From Extreme Points to Object Segmentation](https://arxiv.org/pdf/1711.09081.pdf) modeled, to see if the conclusions we make from the simulations would still hold true in a real-world application with human annotators. 
+Similarly, many such variations of possibilities have been considered in the use of DEXTR, a CNN architecture that converts extreme clicking annotations into precise object masks for semi-automatic segmentation, in order to absolve the possible parameters that make it a better model. 
 
-Choose a username and a password for your admin account. For more information please read Django documentation.
+#### Citations
+D. P. Papadopoulos, J. R. Uijlings, F. Keller, and V. Ferrari. Extreme clicking for efficient object annotation. In ICCV, 2017
 
-Open the installed Google Chrome browser and go to localhost:8080.
+Maninis, K.-K. et al. (2018) “Deep Extreme Cut: From extreme points to object segmentation,” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition [Preprint]. Available at: https://doi.org/10.1109/cvpr.2018.00071.
 
-![Screenshot of CVAT's Log-in Page][CVAT-LogIn-Screenshot]
 
-[WSL2-Guide]: https://docs.microsoft.com/windows/wsl/install-win10
-[Docker-Download]: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module
-[Git-Download]: https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2.21.0-64-bit.exe
-[Chrome-Download]: https://www.google.com/chrome/
-[CVAT-LogIn-Screenshot]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/milestone-1/media/CVAT-LogIn-Screenshot.png "CVAT LogIn Page Screenshot"
+
 

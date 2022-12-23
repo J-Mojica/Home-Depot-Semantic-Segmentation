@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# API Keys
+/api_keys
+
+# VSCode Debug
+.vscode
+
+#pytorch model
+.pth
