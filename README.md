@@ -129,8 +129,9 @@ using tensorboard. On this evaluation we determined that the model
 performed best with about 600 iterations. Then the model was reinitialized
 and trained for this amount of iterations.
 
-The process can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/segmentation.ipynb)
+The process can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/segmentation/segmentation.ipynb)
 
-In the [segmentation directory](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/) one can find the trained model and our attempt at segmenting a 30 second clip of a Home Depot video.
+In the [segmentation directory](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/segmentation/) one can find and our attempt at segmenting a 30 second clip of a Home Depot video.
 
+The trained model can be found [here](https://drive.google.com/file/d/1AHVd4HRVh_P3p6OVek-bZHMLobTmaBpb/view?usp=share_link)
 
