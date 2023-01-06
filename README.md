@@ -2,7 +2,12 @@
 Team 1 Members:
 - [Jose Mojica Perez](https://github.com/J-Mojica)
 - [Mehakpreet Kaur](https://github.com/Mehakpreet21)
-## Milestone 1
+## Milestone 1: CVAT set up and installation
+
+Computer Vision Annotation Tool (CVAT) is an open source
+annotation tool used for labeling data for computer vision 
+algothms. This is the tool we will use to annotate
+a custom data set of 10 classes of kitchen items.
 
 ### CVAT Installation Instructions Followed
 
@@ -55,7 +60,7 @@ Open the installed Google Chrome browser and go to localhost:8080.
 [Chrome-Download]: https://www.google.com/chrome/
 [CVAT-LogIn-Screenshot]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/milestone-1/media/CVAT-LogIn-Screenshot.png "CVAT LogIn Page Screenshot"
 
-## Milestone 2
+## Milestone 2: Data Acquisition
 
 ### Image Scapping using Google Custom Search API
 #### Steps used:
@@ -81,10 +86,13 @@ to only 100 images per category.
 category has its own separate directory and are saved with the name of its respective category followed by a sequential number
 for easy identification.
 
-## Milestone 3
+## Milestone 3: Annotation
+
+We annotated our data using CVAT and DEXTR, a model for semiautomatic object segmentation.
+By using DEXTR we speed up the annotation process for our custom dataset.
 
 ### Annotated Data
-Our annotated data can be found [here.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/annotation/data/data-annotated)
+Our annotated data can be found [here.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/data)
 
 ### DEXTR and How it works
 
@@ -97,8 +105,6 @@ This model builds on the work of Papadopoulous et al.(2017) in which they use th
 #### Applications
 
 DEXTR can be used to obtain dense annotations to train supervised techniques and we have used this application in this milestone for our data of kitchen objects (Dishwasher, blender, toasters etc). As explained by Maninis et al., “in this framework, instead of detailed polygon labels, the workload of the annotator is reduced to only providing the extreme points of an object” (2018), greatly reducing the amount of time needed to to label a data set. Algorithms that are trained using the annotations that are produced by DEXTR perform just as well as those that are trained using the ground truth ones. Training with DEXTR is much more efficient than training from the ground truth for a given target quality when the cost of obtaining such annotations is taken into account. (Maninis et al., 2018)
-
-
 
 #### Experimental observations
 
@@ -116,8 +122,9 @@ Maninis, K.-K. et al. (2018) “Deep Extreme Cut: From extreme points to object 
 
 
 ## Milestone 4
-To perform the segmentation, we used the [Detectron3](https://github.com/facebookresearch/detectron2)
-We used a model pretrained on the MS COCO dataset implemented within the Detectron2 framework.
+To perform the segmentation on our custom dataset, 
+we used the [Detectron2](https://github.com/facebookresearch/detectron2) 
+framework. We used a model pretrained on the MS COCO dataset implemented within Detectron2.
 The model used for the segmentation is a model similar to This is similar to the setting used in the
 [Mask R-CNN paper](https://doi.org/10.48550/arXiv.1703.06870), Appendix A, with some modifications
 
@@ -129,9 +136,9 @@ using tensorboard. On this evaluation we determined that the model
 performed best with about 600 iterations. Then the model was reinitialized
 and trained for this amount of iterations.
 
-The process can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/segmentation/segmentation.ipynb)
+The process can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/segmentation/segmentation.ipynb)
 
-In the [segmentation directory](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/segmentation/segmentation/) one can find and our attempt at segmenting a 30 second clip of a Home Depot video.
+In the [segmentation directory](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/segmentation) one can find and our attempt at segmenting a 30 second clip of a Home Depot video.
 
 The trained model can be found [here](https://drive.google.com/file/d/1AHVd4HRVh_P3p6OVek-bZHMLobTmaBpb/view?usp=share_link)
 
