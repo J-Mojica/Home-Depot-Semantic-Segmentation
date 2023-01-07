@@ -11,7 +11,8 @@ Team 1 Members:
 Segmentation of a 30 second clip:
 
 ![Demo GIF of semantic segmentation on a 30 second clip of a Home Depot video][demoGIF]
-[demoGIF]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/media/segmentation_demo.gif
+
+[demoGIF]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/media/segmentation_demo.gif "demo GIF"
 
 ## Milestone 1: CVAT set up and installation
 
