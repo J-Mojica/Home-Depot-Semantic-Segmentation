@@ -1,12 +1,23 @@
 # Home-Depot-Semantic-Segmentation
+Computer vision project to perform semantic segmentation on a Home Depot video
+using transfer learning for custom datasets in the small-data regime.
+
 Team 1 Members:
 - [Jose Mojica Perez](https://github.com/J-Mojica)
 - [Mehakpreet Kaur](https://github.com/Mehakpreet21)
+
+
+# Demo
+Segmentation of a 30 second clip:
+
+![Demo GIF of semantic segmentation on a 30 second clip of a Home Depot video][demoGIF]
+[demoGIF]: https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/media/segmentation_demo.gif
+
 ## Milestone 1: CVAT set up and installation
 
 Computer Vision Annotation Tool (CVAT) is an open source
 annotation tool used for labeling data for computer vision 
-algothms. This is the tool we will use to annotate
+algorithms. This is the tool we will use to annotate
 a custom data set of 10 classes of kitchen items.
 
 ### CVAT Installation Instructions Followed
@@ -88,11 +99,19 @@ for easy identification.
 
 ## Milestone 3: Annotation
 
-We annotated our data using CVAT and DEXTR, a model for semiautomatic object segmentation.
+We annotated our data using CVAT and DEXTR, a model for semi-automatic object segmentation.
 By using DEXTR we speed up the annotation process for our custom dataset.
 
 ### Annotated Data
-Our annotated data can be found [here.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/data)
+Our annotated data can be found in the [data directory.](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/data)
+In this very same directory one can find a [text file](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/data/classes.txt) 
+with the class names of our custom dataset, as well
+as the [data-raw](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/tree/main/data/data-raw) directory
+which contains the data as it was downloaded from the data acquisition stage of the project.
+
+### Annotating images using CVAT
+
+After booting up all the 
 
 ### DEXTR and How it works
 
@@ -121,8 +140,8 @@ D. P. Papadopoulos, J. R. Uijlings, F. Keller, and V. Ferrari. Extreme clicking 
 Maninis, K.-K. et al. (2018) “Deep Extreme Cut: From extreme points to object segmentation,” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition [Preprint]. Available at: https://doi.org/10.1109/cvpr.2018.00071.
 
 
-## Milestone 4
-To perform the segmentation on our custom dataset, 
+## Milestone 4: Semantic segmentation
+To perform semantic segmentation on our custom dataset, 
 we used the [Detectron2](https://github.com/facebookresearch/detectron2) 
 framework. We used a model pretrained on the MS COCO dataset implemented within Detectron2.
 The model used for the segmentation is a model similar to This is similar to the setting used in the
