@@ -10,7 +10,7 @@ Team 1 Members:
 # Demo
 Segmentation of a 30 second clip:
 
-![Demo GIF of semantic segmentation on a 30 second clip of a Home Depot video](./media/segmentation_demo_small.gif)
+![Demo GIF of semantic segmentation on a 30 second clip of a Home Depot video](./media/segmentation_demo.gif)
 
 ## Milestone 1: CVAT set up and installation
 
@@ -178,7 +178,14 @@ using tensorboard. On this evaluation we determined that the model
 performed best with about 600 iterations. Then the model was reinitialized
 and trained for this amount of iterations.
 
-The process can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/segmentation/segmentation.ipynb)
+Better results should be possible with a more rigorous hyperparameter optimization scheme, such
+as a grid search over various values for maximum number of iterations and learning rate.
+Another way results could be improved is by gathering more data, and curating the images to be 
+mostly similar to the type of images the model will encounter on the video. With the current
+dataset, one could also perform data augmentation to try and remedy the small amount of data.
+
+The process of preparing the data, training and evaluating the model, and performing semantic segmentation
+can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/segmentation/segmentation.ipynb)
 
 The trained model can be found [here](https://drive.google.com/file/d/1AHVd4HRVh_P3p6OVek-bZHMLobTmaBpb/view?usp=share_link)
 
