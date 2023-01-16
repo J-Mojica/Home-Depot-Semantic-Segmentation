@@ -84,10 +84,10 @@ Open the installed Google Chrome browser and go to localhost:8080.
 - Go to the [Programmable Search Engine Control Panel](https://programmablesearchengine.google.com/controlpanel/all) and add a new 
 custom search engine, making sure to enable image search. Then get the Search Engine's ID in it's overview page after adding it.
   
-- Create the functions for a [web scraper](image_scraper.py) which uses the Google API Python Client to access a Custom Search Engine resource
+- Create the functions for a [web scraper](./src/data-acquisition/image_scraper.py) which uses the Google API Python Client to access a Custom Search Engine resource
  to obtain the URLs of images and downloads them.
 
-- Created a [driver program](scrape.py) for the [web scraper](image_scraper.py) functions to get the URLs of 200 images
+- Created a [driver program](./src/data-acquisition/scrape.py) for the [web scraper](./src/data-acquisition/image_scraper.py) functions to get the URLs of 200 images
 and download them. We acquired double of what's necessary in case some of the URLs do not work or the images are repeated 
 instances of others already in the set. Manual clean up will be done at a later stage and the image set will be restricted 
 to only 100 images per category. 
@@ -185,7 +185,7 @@ mostly similar to the type of images the model will encounter on the video. With
 dataset, one could also perform data augmentation to try and remedy the small amount of data.
 
 The process of preparing the data, training and evaluating the model, and performing semantic segmentation
-can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/segmentation/segmentation.ipynb)
+can be seen in the [segmentation notebook](https://github.com/J-Mojica/Home-Depot-Semantic-Segmentation/blob/main/src/segmentation/segmentation.ipynb)
 
 The trained model can be found [here](https://drive.google.com/file/d/1AHVd4HRVh_P3p6OVek-bZHMLobTmaBpb/view?usp=share_link)
 
